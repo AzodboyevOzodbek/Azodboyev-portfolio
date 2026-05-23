@@ -21,8 +21,10 @@ def send_welcome(message):
 def send_welcome(message):
 	bot.reply_to(message, 'Salom! Mening portfolio botimga xush kelibsiz!')
 
-@bot.message_handler(func=lambda m: True)
+@bot.message_handler(content_types=['text'])
 def echo_all(message):
-	bot.reply_to(message, message.text + "\n\n" + TEXT)
+    if not message.text:
+        return
+    bot.reply_to(message, f"{message.text}\n\n{TEXT}")
 	
 bot.infinity_polling()
