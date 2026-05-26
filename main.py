@@ -51,19 +51,15 @@ def replaybutton(message):
 
 @bot.message_handler(func=lambda m: m.text == "Bog'lanish")
 def replaybutton(message):
-    text4 = """
-🌐 Ijtimoiy tarmoqlar:
-📸 Instagram: <a href="https://www.instagram.com/Azodboyev.o">Azodboyev.o</a>
-💬 Telegram: <a href="https://t.me/Azodboyev_o">Azodboyev</a>
-🔗 GitHub: <a href="https://github.com/AzodboyevOzodbek">AzodboyevOzodbek</a>
-"""
-
+    text4 = """🌐 Ijtimoiy tarmoqlar:"""
+    keyboard = types.ReplyKeyboardMarkup(resize_keyboard=True)
+    btn1 = types.KeyboardButton('📸 Instagram', url="https://www.instagram.com/Azodboyev.o")
+    btn2 = types.KeyboardButton('💬 Telegram', url="https://t.me/Azodboyev_o")
+    btn3 = types.KeyboardButton('🔗 GitHub', url="https://github.com/AzodboyevOzodbek")
+    keyboard.add(btn1, btn2, btn3)
     bot.send_message(
         message.chat.id,
-        text4,
-        parse_mode="HTML",
-        disable_web_page_preview=True
-    )
+        text4,)
 
 @bot.message_handler(func=lambda m: m.text == "Loyhalarim")
 def replaybutton(message):
@@ -88,13 +84,13 @@ def replaybutton(message):
 
 @bot.message_handler(func=lambda m: m.text == "Yutuqlarim")
 def replaybutton(message):
-    text6 = """🏆 Yutuqlarim
-
-1️⃣ 🏆 <a href="https://createx-lending.vercel.app">Createx Lending</a>
-2️⃣ 🏆 <a href="https://strimline-lending.vercel.app">Strimline-Lending</a>
-3️⃣ 🏆 <a href="https://food-website-lemon.vercel.app/">Food-Website</a>
-"""
-    bot.send_message(message.chat.id,text6,parse_mode="HTML")
+    text6 = """🏆 Yutuqlarim"""
+    keyboard = types.ReplyKeyboardMarkup(resize_keyboard=True)
+    btn1 = types.KeyboardButton('1️⃣ 🏆 Createx Lending', url="https://createx-lending.vercel.app")
+    btn2 = types.KeyboardButton('2️⃣ 🏆 Strimline-Lending', url="https://strimline-lending.vercel.app")
+    btn3 = types.KeyboardButton('3️⃣ 🏆 Food-Website', url="https://food-website-lemon.vercel.app/")
+    keyboard.add(btn1, btn2, btn3)
+    bot.send_message(message.chat.id,text6)
 
 bot.infinity_polling()
 
