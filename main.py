@@ -27,7 +27,8 @@ def send_welcome(message):
     btn2 = types.KeyboardButton('Loyhalarim')
     btn3 = types.KeyboardButton('Boglanish')
     btn4 = types.KeyboardButton('Yutuqlarim')
-    keyboard.add(btn1, btn2, btn3, btn4)
+    keyboard.add(btn1, btn2)
+    keyboard.add(btn3, btn4)
     text = 'Salom! Mening portfolio botimga xush kelibsiz!'
     bot.send_message(message.chat.id, text, reply_markup=keyboard)
 
@@ -93,7 +94,7 @@ def replaybutton(message):
 2️⃣ 🏆 <a href="https://strimline-lending.vercel.app">Strimline-Lending</a>
 3️⃣ 🏆 <a href="https://food-website-lemon.vercel.app/">Food-Website</a>
 """
-    bot.send_message(message.chat.id,text6,)
+    bot.send_message(message.chat.id,text6,parse_mode="HTML")
 
 bot.infinity_polling()
 
