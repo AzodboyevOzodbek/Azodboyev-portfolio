@@ -34,24 +34,39 @@ def send_welcome(message):
 
 @bot.message_handler(func=lambda m: m.text == "Men haqimda")
 def replaybutton(message):
-      text3 = """
-👨‍💻 Azodboyev Ozodbek
+    text3 = """
+🧑‍💻 Azodboyev Ozodbek
 
 📅 2012-yilda tug‘ilganman
 🎮 O‘yinlar va dasturlashga qiziqaman
 🤖 Telegram botlar va turli loyihalar ustida ishlayman
 💡 Python va texnologiyalarni o‘rganishni yoqtiraman
-
-🌐 Ijtimoiy tarmoqlar:
-📸 Instagram: <a href="https://www.instagram.com/Azodboyev.o">Azodboye.o</a>
-💬 Telegram: <a href="https://t.me/Azodboyev_o">Azodboyev</a>
-🔗 GitHub: <a href="https://github.com/AzodboyevOzodbek">AzodboyevOzodbek</a>
 """
-      bot.send_message(message.chat.id, text3)
+
+    keyboard = types.ReplyKeyboardMarkup(resize_keyboard=True)
+
+    btn1 = types.KeyboardButton(
+        "📸 Instagram", 'https://www.instagram.com/Azodboyev.o'
+    )
+
+    btn2 = types.KeyboardButton(
+        "💬 Telegram", 'https://t.me/Azodboyev_o'
+    )
+
+    btn3 = types.KeyboardButton(
+        "🔗 GitHub",'https://github.com/AzodboyevOzodbek'
+    )
+
+    keyboard.add(btn1, btn2, btn3)
+
+    bot.send_message(
+        message.chat.id,
+        text3,
+        reply_markup=keyboard)
 
 @bot.message_handler(func=lambda m: m.text == "Bog'lanish")
 def replaybutton(message):
-    text4 = """🌐 Ijtimoiy tarmoqlar:"""
+    text4 = """Bog'lanish"""
     keyboard = types.ReplyKeyboardMarkup(resize_keyboard=True)
     btn1 = types.KeyboardButton('📸 Instagram', url="https://www.instagram.com/Azodboyev.o")
     btn2 = types.KeyboardButton('💬 Telegram', url="https://t.me/Azodboyev_o")
