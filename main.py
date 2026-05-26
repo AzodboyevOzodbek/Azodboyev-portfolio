@@ -99,9 +99,7 @@ def replaybutton(message):
         url="https://food-website-lemon.vercel.app"
     )
 
-    keyboard.add(btn1)
-    keyboard.add(btn2)
-    keyboard.add(btn3)
+    keyboard.add(btn1,btn2,btn3)
 
     bot.send_message(
         message.chat.id,
