@@ -43,9 +43,9 @@ def replaybutton(message):
 💡 Python va texnologiyalarni o‘rganishni yoqtiraman
 
 🌐 Ijtimoiy tarmoqlar:
-📸 Instagram: Azodboyev.o
-💬 Telegram: @Azodboyev_o
-🔗 GitHub: AzodboyevOzodbek
+📸 Instagram: <a href="https://www.instagram.com/Azodboyev.o">Azodboye.o</a>
+💬 Telegram: <a href="https://t.me/Azodboyev_o">Azodboyev</a>
+🔗 GitHub: <a href="https://github.com/AzodboyevOzodbek">AzodboyevOzodbek</a>
 """
       bot.send_message(message.chat.id, text3)
 
@@ -54,7 +54,7 @@ def replaybutton(message):
     text4 = """
 🌐 Ijtimoiy tarmoqlar:
 📸 Instagram: <a href="https://www.instagram.com/Azodboyev.o">Azodboyev.o</a>
-💬 Telegram: @Azodboyev_o
+💬 Telegram: <a href="https://t.me/Azodboyev_o">Azodboyev</a>
 🔗 GitHub: <a href="https://github.com/AzodboyevOzodbek">AzodboyevOzodbek</a>
 """
 
