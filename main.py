@@ -1,3 +1,5 @@
+from email.mime import message
+
 import telebot
 from telebot import types
 import os
@@ -24,7 +26,8 @@ def send_welcome(message):
     btn1 = types.KeyboardButton('Men haqimda')
     btn2 = types.KeyboardButton('Loyhalarim')
     btn3 = types.KeyboardButton('Boglanish')
-    keyboard.add(btn1, btn2, btn3)
+    btn4 = types.KeyboardButton('Yutuqlarim')
+    keyboard.add(btn1, btn2, btn3, btn4)
     text = 'Salom! Mening portfolio botimga xush kelibsiz!'
     bot.send_message(message.chat.id, text, reply_markup=keyboard)
 
@@ -44,5 +47,53 @@ def replaybutton(message):
 🔗 GitHub: AzodboyevOzodbek
 """
       bot.send_message(message.chat.id, text3)
+
+@bot.message_handler(func=lambda m: m.text == "Bog'lanish")
+def replaybutton(message):
+    text4 = """
+🌐 Ijtimoiy tarmoqlar:
+📸 Instagram: <a href="https://www.instagram.com/Azodboyev.o">Azodboyev.o</a>
+💬 Telegram: @Azodboyev_o
+🔗 GitHub: <a href="https://github.com/AzodboyevOzodbek">AzodboyevOzodbek</a>
+"""
+
+    bot.send_message(
+        message.chat.id,
+        text4,
+        parse_mode="HTML",
+        disable_web_page_preview=True
+    )
+
+@bot.message_handler(func=lambda m: m.text == "Loyhalarim")
+def replaybutton(message):
+      text5 = """📂 Loyihalarim
+
+1️⃣ 🤖 Portfolio Bot
+👤 Men haqimda ma'lumot beradi
+🛠 Python, Telegram Bot API
+
+2️⃣ 🔄 Kirill ↔ Lotin Bot
+🔤 Matnlarni avtomatik o‘giradi
+🛠 Python
+
+3️⃣ 🎬 Kino Bot
+🎥 Kino qidirish va yuborish
+🛠 Aiogram
+
+4️⃣ 🌐 Web App
+📱 Telegram uchun mini web ilova
+🛠 HTML, CSS, JavaScript"""
+      bot.send_message(message.chat.id, text5)
+
+@bot.message_handler(func=lambda m: m.text == "Yutuqlarim")
+def replaybutton(message):
+    text6 = """🏆 Yutuqlarim
+
+1️⃣ 🏆 <a href="https://createx-lending.vercel.app">Createx Lending</a>
+2️⃣ 🏆 <a href="https://strimline-lending.vercel.app">Strimline-Lending</a>
+3️⃣ 🏆 <a href="https://food-website-lemon.vercel.app/">Food-Website</a>
+"""
+    bot.send_message(message.chat.id,text6,)
+
 bot.infinity_polling()
 
