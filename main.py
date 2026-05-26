@@ -25,7 +25,7 @@ def send_welcome(message):
     keyboard = types.ReplyKeyboardMarkup(resize_keyboard=True)
     btn1 = types.KeyboardButton('Men haqimda')
     btn2 = types.KeyboardButton('Loyhalarim')
-    btn3 = types.KeyboardButton('Boglanish')
+    btn3 = types.KeyboardButton('Bog\'lanish')
     btn4 = types.KeyboardButton('Yutuqlarim')
     keyboard.add(btn1, btn2)
     keyboard.add(btn3, btn4)
