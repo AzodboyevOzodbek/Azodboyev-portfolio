@@ -81,12 +81,32 @@ def replaybutton(message):
 @bot.message_handler(func=lambda m: m.text == "Yutuqlarim")
 def replaybutton(message):
     text6 = """🏆 Yutuqlarim"""
-    keyboard = types.ReplyKeyboardMarkup(resize_keyboard=True)
-    btn1 = types.InlineKeyboardButton('1️⃣ 🏆 Createx Lending', url="https://createx-lending.vercel.app")
-    btn2 = types.InlineKeyboardButton('2️⃣ 🏆 Strimline-Lending', url="https://strimline-lending.vercel.app")
-    btn3 = types.InlineKeyboardButton('3️⃣ 🏆 Food-Website', url="https://food-website-lemon.vercel.app/")
-    keyboard.add(btn1, btn2, btn3)
-    bot.send_message(message.chat.id,text6)
+
+    keyboard = types.InlineKeyboardMarkup()
+
+    btn1 = types.InlineKeyboardButton(
+        '1️⃣ 🏆 Createx Lending',
+        url="https://createx-lending.vercel.app"
+    )
+
+    btn2 = types.InlineKeyboardButton(
+        '2️⃣ 🏆 Strimline-Lending',
+        url="https://strimline-lending.vercel.app"
+    )
+
+    btn3 = types.InlineKeyboardButton(
+        '3️⃣ 🏆 Food-Website',
+        url="https://food-website-lemon.vercel.app"
+    )
+
+    keyboard.add(btn1)
+    keyboard.add(btn2)
+    keyboard.add(btn3)
+
+    bot.send_message(
+        message.chat.id,
+        text6,
+        reply_markup=keyboard)
 
 bot.infinity_polling()
 
