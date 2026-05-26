@@ -42,27 +42,8 @@ def replaybutton(message):
 🤖 Telegram botlar va turli loyihalar ustida ishlayman
 💡 Python va texnologiyalarni o‘rganishni yoqtiraman
 """
-
-    keyboard = types.ReplyKeyboardMarkup(resize_keyboard=True)
-
-    btn1 = types.KeyboardButton(
-        "📸 Instagram", 'https://www.instagram.com/Azodboyev.o'
-    )
-
-    btn2 = types.KeyboardButton(
-        "💬 Telegram", 'https://t.me/Azodboyev_o'
-    )
-
-    btn3 = types.KeyboardButton(
-        "🔗 GitHub",'https://github.com/AzodboyevOzodbek'
-    )
-
-    keyboard.add(btn1, btn2, btn3)
-
     bot.send_message(
-        message.chat.id,
-        text3,
-        reply_markup=keyboard)
+        message.chat.id,text3)
 
 @bot.message_handler(func=lambda m: m.text == "Bog'lanish")
 def replaybutton(message):
@@ -101,9 +82,9 @@ def replaybutton(message):
 def replaybutton(message):
     text6 = """🏆 Yutuqlarim"""
     keyboard = types.ReplyKeyboardMarkup(resize_keyboard=True)
-    btn1 = types.KeyboardButton('1️⃣ 🏆 Createx Lending', url="https://createx-lending.vercel.app")
-    btn2 = types.KeyboardButton('2️⃣ 🏆 Strimline-Lending', url="https://strimline-lending.vercel.app")
-    btn3 = types.KeyboardButton('3️⃣ 🏆 Food-Website', url="https://food-website-lemon.vercel.app/")
+    btn1 = types.InlineKeyboardButton('1️⃣ 🏆 Createx Lending', url="https://createx-lending.vercel.app")
+    btn2 = types.InlineKeyboardButton('2️⃣ 🏆 Strimline-Lending', url="https://strimline-lending.vercel.app")
+    btn3 = types.InlineKeyboardButton('3️⃣ 🏆 Food-Website', url="https://food-website-lemon.vercel.app/")
     keyboard.add(btn1, btn2, btn3)
     bot.send_message(message.chat.id,text6)
 
